@@ -123,7 +123,6 @@ function deletaTarefa2(){
         lista2.splice((deletaItem2 - 1), 1);
         listacompleta2 = "";
         alert("Tarefa deletada!! ");
-        verLixeira2(deletaItem2);
         menu();
 
     }
