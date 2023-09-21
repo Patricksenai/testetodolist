@@ -14,7 +14,7 @@ function menu(){
     let escolha;
 
     while(escolha != 0){
-        escolha = parseInt(window.prompt(" - Menu - \n1 - Adcionar tarefa\n2 - Ver tarefas\n3 - adicionar tarefa2 \n4 - ver lista2 \n5-  excluir lista1 \n6 - excluir lista2 \n7- ver lixeira \n8- ver lixeira2 \n0-sair"))
+        escolha = parseInt(window.prompt(" - Menu - \n1 - Adcionar tarefa1\n2 - Ver tarefas1\n3 - adicionar tarefa2 \n4 - ver lista2 \n5-  excluir lista1 \n6 - excluir lista2 \n7- ver lixeira \n8- ver lixeira2 \n0-sair"))
         
         switch (escolha) {
             case 1:
@@ -30,7 +30,7 @@ function menu(){
                 alert(listaItens2());
                 break;
             case 5: 
-            deletaTarefa()
+            deletaTarefa1()
             break;
 
             case 6:
@@ -54,7 +54,7 @@ function menu(){
 
 
 }
-// adiciona as tarefas na lista 
+// adiciona as tarefas na lista 1
 function addTarefa(){
     let digiteTarefa;
 
@@ -63,7 +63,7 @@ function addTarefa(){
     alert("Tarefa adcionada a lista!!");
 
 }
-//
+// adiciona tarefas na lista 2
 function addtarefa2(){
     let digitatarefa2;
 
@@ -74,7 +74,7 @@ function addtarefa2(){
 }
 
 
-//
+// exibe a lista de tarefas 1
 function listaItens(){
     listaCompleta = "";
     for (let i = 0; i < lista.length ; i++){
@@ -82,25 +82,25 @@ function listaItens(){
     }
     return listaCompleta;
 }
-
+// exibe a lista de tarefas 2
 function listaItens2(){
     listacompleta2 = "";
     for (let i = 0; i < lista2.length ; i++){
-        listacompleta2 = listacompleta2 + (i+1) + "-" + lista[i]  + "\n"
+        listacompleta2 = listacompleta2 + (i+1) + "-" + lista2[i]  + "\n"
     }
     return listacompleta2;
 
 }
 
-
-function deletaTarefa(){
+// deleta tarefas da lista 1
+function deletaTarefa1(){
     let deletaItem;
 
     deletaItem = parseInt(window.prompt("Qual tarefa você deseja deletar? " + "\n" + listaItens()))
     
     if((deletaItem < 1) || (deletaItem > lista.length)){
         alert("Insira um item existente!!")
-        deletaTarefa();
+        deletaTarefa1();
     }else{
         lista.splice((deletaItem - 1), 1);
         listaCompleta = "";
@@ -110,7 +110,7 @@ function deletaTarefa(){
     }
     
 }
-
+// deleta tarefa da lista 2
 function deletaTarefa2(){
     let deletaItem2;
 
@@ -129,7 +129,7 @@ function deletaTarefa2(){
     }
 }
 
-
+// exibe a lixeira da lista 1
  function verLixeira(){
 
     lixeira.push(deletaItem)
@@ -138,7 +138,7 @@ function deletaTarefa2(){
     
 
  }
-
+//exibe a lixeira da lista 2
  function verLixeira2(){
 
     lixeira2.push(deletaItem2)
